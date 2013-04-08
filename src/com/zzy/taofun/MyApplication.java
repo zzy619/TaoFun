@@ -2,6 +2,7 @@
 package com.zzy.taofun;
 
 import com.taobao.top.android.TopAndroidClient;
+import com.zzy.taofun.utils.Constants;
 
 import android.app.Application;
 
@@ -10,8 +11,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TopAndroidClient.registerAndroidClient(getApplicationContext(), "21451934",
-                "60cc6028d20d92a55445d683c619e622", "com.zzy.taofun://www.baidu.com");
+        TopAndroidClient.registerAndroidClient(getApplicationContext(), Constants.APP_KEY,
+                Constants.APP_SECRET, Constants.CALLBACK_URL);
     }
 
 }
