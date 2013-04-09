@@ -19,7 +19,7 @@
 
     <style name="MyTheme.CustomDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/auth_dialog_bg</item>
     </style>
 
     <style name="MyTheme.CustomDialogNoDim" parent="@style/MyTheme.CustomDialog">

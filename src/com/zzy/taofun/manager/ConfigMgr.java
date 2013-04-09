@@ -19,15 +19,15 @@ public class ConfigMgr {
         return sPrefs;
     }
 
-    public static boolean getAuthUserID(Context ctx) {
+    public static Long getAuthUserID(Context ctx) {
         SharedPreferences prefs = initSharedPreferences(ctx);
-        return prefs.getBoolean(USER_ID, false);
+        return prefs.getLong(USER_ID,0L);
     }
 
-    public static void setAuthUserID(Context ctx, String userId) {
+    public static void setAuthUserID(Context ctx, Long userId) {
         SharedPreferences prefs = initSharedPreferences(ctx);
         SharedPreferences.Editor spe = prefs.edit();
-        spe.putString(USER_ID, userId);
+        spe.putLong(USER_ID, userId);
         spe.commit();
     }
 
