@@ -5,7 +5,6 @@ import com.taobao.api.ApiException;
 import com.taobao.api.TaobaoParser;
 import com.taobao.api.TaobaoResponse;
 import com.taobao.api.internal.mapping.Converter;
-import com.taobao.api.internal.parser.json.JsonConverter;
 
 public class LocalObjectJsonParser<T extends TaobaoResponse> implements TaobaoParser<T> {
 

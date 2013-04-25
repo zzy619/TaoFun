@@ -6,6 +6,8 @@ import java.util.Set;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -102,12 +104,10 @@ public class MainActivity extends Activity implements OnClickListener {
                     try {
                         ItemGetResponse userRespond = (ItemGetResponse) parser
                                 .parse(result);
-                        Item user = userRespond.getItem();
-//                        mTextView.setText(user.getEmail() + "\n" + user.getNick() + "\n"
-//                                + user.getBirthday() + "\n" + user.getLocation().getAddress()
-//                                + "\n" + user.getSellerCredit().getLevel() + "\n");
-                        Log.e("ql","Title:   "+user.getTitle());
-                        mTextView.setText(user.getTitle());
+                        Item item = userRespond.getItem();
+                        Message msg=new Message();
+                        msg.obj=item;
+                        mHandler.sendMessage(msg);
                     } catch (ApiException e) {
                         e.printStackTrace();
                     }
@@ -116,4 +116,10 @@ public class MainActivity extends Activity implements OnClickListener {
         }
     }
 
+    Handler mHandler = new Handler(){
+        public void handleMessage(android.os.Message msg) {
+            Item item=(Item) msg.obj;
+            mTextView.setText(item.getTitle()+"\n"+item.getPrice());
+        };
+    };
 }

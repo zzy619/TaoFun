@@ -25,7 +25,7 @@ public class PropertyDescriptor {
                     mField.getType()
             });
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            return null;
         }
 
         return method;

@@ -1,20 +1,14 @@
 package com.zzy.taofun.parse;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import android.util.Log;
 
 import com.taobao.api.ApiException;
-import com.taobao.api.TaobaoResponse;
-import com.taobao.api.internal.mapping.Converter;
 import com.taobao.api.internal.mapping.Reader;
 import com.taobao.api.internal.parser.json.JsonConverter;
-import com.taobao.api.internal.util.json.ExceptionErrorListener;
-import com.taobao.api.internal.util.json.JSONReader;
-import com.taobao.api.internal.util.json.JSONValidatingReader;
 
 public class LocalJsonConverter extends JsonConverter{
 

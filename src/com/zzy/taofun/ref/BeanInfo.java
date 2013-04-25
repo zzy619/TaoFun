@@ -15,7 +15,9 @@ public class BeanInfo {
     }
 
     public PropertyDescriptor[] getPropertyDescriptors() {
-        return (PropertyDescriptor[]) mPropertyDescriptor.toArray();
+        PropertyDescriptor[] pds = (PropertyDescriptor[]) mPropertyDescriptor
+                .toArray(new PropertyDescriptor[mPropertyDescriptor.size()]);
+        return pds;
     }
 
     public void setPropertyDescriptor(PropertyDescriptor pro) {
